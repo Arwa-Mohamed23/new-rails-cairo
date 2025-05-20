@@ -37,8 +37,8 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_20_085645) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "editors_posts", "editors"
   add_foreign_key "editors_posts", "posts"
+  add_foreign_key "editors_posts", "users", column: "editor_id"
   add_foreign_key "posts", "users"
   add_foreign_key "posts", "users", column: "creator_id"
 end
